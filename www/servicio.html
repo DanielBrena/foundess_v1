@@ -1,0 +1,164 @@
+<ons-navigator title="Servicio" ng-controller="ControllerServicio" var="page_servicio"  >
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        
+      </div>
+
+      <div class="center"><img style="width:80%;padding:2px" src="img/foundess_logo.png" alt=""></div>
+
+      <div class="right" >
+       <ons-toolbar-button >
+           
+        </ons-toolbar-button>  
+      </div>
+
+    </ons-toolbar>
+
+    <div class="navigation-bar">
+      <div class="navigation-bar__center">
+        <form ng-submit="submit_search()" >
+          <input type="search" id="search" ng-model="servicio.search" class="search-input"  placeholder="Busqueda">
+        </form>
+         
+      </div>
+    </div>
+
+    <div class="navigation-bar">
+      <div class="navigation-bar__center">
+            
+        <div class="button-bar" style="width:200px; margin:8px auto 0;">
+          <div class="button-bar__item">
+            <input type="radio" name="navi-segment-a" ng-click="mostrarLista()" checked>
+            <div class="button-bar__button" >Lista</div>
+          </div>
+
+          <div class="button-bar__item">
+            <input type="radio" name="navi-segment-a" ng-click="mostrarMapa()">
+              <div class="button-bar__button" >Mapa</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ons-row ng-show="mostrar_lista">
+      <ons-col>
+        <div id="lista" >
+          <ons-list class="plan-list" id="lista" ng-repeat="s in servicios">
+            <ons-list-item ng-click="mostrar_informacion(s)" class="list__item--tappable list__item__line-height" modifier="chevron">
+              {{s.get("nombre")}}
+            </ons-list-item>
+          </ons-list>
+        </div>
+      </ons-col>
+    
+    </ons-row>
+    
+    <ons-row ng-show="mostrar_mapa">
+      <ons-col>
+        <div id="mapa"></div>
+      </ons-col>
+    
+    </ons-row>
+  </ons-page>
+</ons-navigator>
+
+
+
+<ons-template ng-controller="ControllerServicio" id="informacion_servicio.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left"><ons-back-button>Back</ons-back-button></div>
+      <div class="center">Informacion</div>
+    </ons-toolbar>
+    
+    <div class="profile-card">
+
+        <img src="img/LogoFoundessCircle.png" class="profile-image">
+        <div class="profile-name">{{servicio_info.nombre}}</div>
+        <div class="profile-id">@{{servicio_info.nombre}}</div>
+        <div class="profile-desc">{{servicio_info.descripcion}}</div>
+
+      </div>
+
+      <ons-list>
+        <ons-list-item>
+          <ons-row>
+            <ons-col class="info-col">
+              <div class="info-num">1500</div>
+              <div class="info-unit">Visitas</div>
+            </ons-col>
+            <ons-col class="info-col">
+              <div class="info-num">10</div>
+              <div class="info-unit">Comentarios</div>
+            </ons-col>
+            <ons-col class="info-col">
+              <div class="info-num">38</div>
+              <div class="info-unit">Rating</div>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
+      </ons-list>
+
+      <ons-list modifier="inset" style="margin-top: 10px">
+        <ons-list-item ng-click="mostrar_ruta(servicio_info)" modifier="chevron">
+          Mostrar ruta
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron">
+          Numero telefonico
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron">
+          Correo electronico
+        </ons-list-item>
+
+      </ons-list>
+
+      <br>
+
+  </ons-page>
+</ons-template>
+
+<!--
+<ons-template ng-controller="ControllerServicio" id="ruta_servicio.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left"><ons-back-button>Back</ons-back-button></div>
+      <div class="center">Ruta</div>
+    </ons-toolbar>
+  
+
+    <ons-row>
+      <ons-col>
+        <div style="width: 
+
+
+
+
+
+
+
+        96%;
+  margin: 6px auto 6px auto;
+  height: 350px;" id="map"></div>
+      </ons-col>
+    
+    </ons-row>
+
+    <ons-row>
+      <ons-col>
+        <div style="width: 96%;
+  margin: 6px auto 6px auto;
+  height: 350px;background:red"id="ruta"></div>
+      </ons-col>
+    
+    </ons-row>
+
+
+
+  </ons-page>
+</ons-template>
+
+-->
+

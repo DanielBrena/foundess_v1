@@ -1,0 +1,28 @@
+#search{
+	width: 96%;
+	margin: 6px auto 6px auto;
+
+}
+
+#mapa{
+	width: 96%;
+	margin: 6px auto 6px auto;
+	height: 350px;
+}
+
+#mapa_input{
+	position: absolute;
+	width: 100%;
+	height: 350px;;
+	z-index:-1;
+}
+p{
+	margin-top: 30px;
+}
+#mapa_search{
+	
+	margin: 6px auto 6px auto;
+	width: 60%;
+	 z-index:1;
+}
+
